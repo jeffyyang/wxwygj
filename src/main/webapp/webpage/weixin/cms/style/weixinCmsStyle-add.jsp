@@ -24,7 +24,7 @@
    $(function () {
       'use strict';
       // Change this to the location of your server-side upload handler:
-      var url = 'weixinShopCategoryController.do?upload',
+      var url = 'weixinCmsSiteController.do?upload',
           uploadButton = $('<button/>')
               .addClass('btn btn-primary')
               .prop('disabled', true)
