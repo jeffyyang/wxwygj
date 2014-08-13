@@ -1,0 +1,8 @@
+﻿时间：2014-08-13
+BUG:1.关键字消息回复异常，导致每次回复只回复菜单内容。
+解决方法:
+方法1.更新最新代码。修改日志查看GIT历史，重新执行doc/db/jeecg-weixin-V2.1-0813.sql文件。
+方法2：更新最新代码。修改日志查看GIT历史，在weixin_receivetext表中，新增nickname字段。
+相关文件：
+1.src/main/java/weixin/guanjia/message/entity/ReceiveText.java
+2.doc/db/jeecg-weixin-V2.1-0813.sql
