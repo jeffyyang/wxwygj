@@ -11,7 +11,7 @@
  	$(document).ready(function(){ 
  	   var msgType = "${msgType}";
  	   var templateId = "${templateId}";
- 	   var supMenuId="${fatherName}";
+ 	   var supMenuId="${fatherId}";
  	   if(templateId){
  	   		var templateObj = $("#templateId");
 	 		templateObj.html("");
@@ -54,12 +54,15 @@
 	 			dataType:"JSON",
 	 			type:"POST",
 	 			success:function(data){
-	 				var msg="";
+	 				var msg="<option>一级菜单</option>";
 	 				for(var i=0;i<data.length;i++){
-	 				   
-	 				 
-	 				    	
-	 				    		msg += "<option value='"+data[i].id+"' selected='selected'>"+data[i].name+"</option>";
+	 							//判断是否为修改之前选择的上级,更改为选中状态
+								if(data[i].id==supMenuId){
+									msg += "<option value='"+data[i].id+"' selected='selected'>"+data[i].name+"</option>";
+								}else{
+									msg += "<option value='"+data[i].id+"'>"+data[i].name+"</option>";
+								}	 				   			
+	 				    		
 	 				   
 	 				}
 	 				supMenuIdObj.html(msg);
@@ -78,10 +81,11 @@
  				for(var i=0;i<inputAttr.length;i++){
  					$(inputAttr[i]).removeAttr("disabled");
  				}
- 				
  				$("#templateTr").removeAttr("style");
  				$("#templateId").removeAttr("disabled");
- 				
+ 				//设置消息类型和验证
+ 				$("#msgType").attr("datatype","*");
+ 				$("#templateId").attr("datatype","*");
  			}else{
  				$("#url").removeAttr("disabled");
  				$("#trurl").removeAttr("style");
@@ -94,6 +98,9 @@
  				
  				$("#templateTr").attr("style","display:none");
  				$("#templateId").attr("disabled","disabled");
+ 				//取消验证。防止无法提交
+ 				$("#msgType").removeAttr("datatype");
+ 				$("#templateId").removeAttr("datatype");
  			}
  		});
  		
@@ -224,7 +231,7 @@
       </label>
      </td>
      <td class="value" colspan="3">
-        <input type="radio" value="text" name="msgType" datatype="*"  <c:if test="${msgType=='text'}">checked="checked"</c:if>/>文本
+        <input type="radio" value="text" name="msgType" id="msgType" datatype="*"  <c:if test="${msgType=='text'}">checked="checked"</c:if>/>文本
         <input type="radio" value="news" name="msgType"  <c:if test="${msgType=='news'}">checked="checked"</c:if>/>图文
         <input type="radio" value="expand" name="msgType"  <c:if test="${msgType=='expand'}">checked="checked"</c:if>/>扩展
       <span class="Validform_checktip">选择消息类型</span>

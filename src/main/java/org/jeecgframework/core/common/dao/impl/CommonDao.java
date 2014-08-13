@@ -199,7 +199,7 @@ public class CommonDao extends GenericBaseCommonDao implements ICommonDao, IGene
 				}
 				if (uploadFile.getByteField() != null) {
 					// 二进制文件保存在数据库中
-					reflectHelper.setMethodValue(uploadFile.getByteField(), StreamUtils.InputStreamTOByte(mf.getInputStream()));
+//					reflectHelper.setMethodValue(uploadFile.getByteField(), StreamUtils.InputStreamTOByte(mf.getInputStream()));
 				}
 				File savefile = new File(savePath);
 				if (uploadFile.getRealPath() != null) {
