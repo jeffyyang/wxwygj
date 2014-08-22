@@ -7,3 +7,6 @@ BUG:1.关键字消息回复异常，导致每次回复只回复菜单内容。
 相关文件：
 1.src/main/java/weixin/guanjia/message/entity/ReceiveText.java
 2.doc/db/jeecg-weixin-V2.1-0813.sql
+
+时间:2014-08-22
+解决自定义菜单 一级菜单无法添加问题。
