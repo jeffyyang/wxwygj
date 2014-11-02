@@ -71,3 +71,13 @@ jeewx的目的是最大化的简化微信开发的流程，使用开发者能把
 
 ![github](http://img.blog.csdn.net/20140706133652718?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemhhbmdkYWlzY290dA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center "jeewx")
 ![github](http://img.blog.csdn.net/20140706133543390?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemhhbmdkYWlzY290dA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center "jeewx")
+
+
+使用Maven开发：
+
+1.修改数据配置文件：
+src\main\resources\dbconfig.properties
+2.修改jeecg系统配置文件：
+src\main\resources\jeecg\jeecg_config.properties
+src\main\resources\jeecg\jeecg_database.properties
+2. 运行->mvn tomcat:run 
