@@ -6,10 +6,8 @@ import java.util.Map;
 import org.jeecgframework.minidao.annotation.Arguments;
 import org.jeecgframework.minidao.annotation.MiniDao;
 import org.jeecgframework.minidao.annotation.ResultType;
-import org.jeecgframework.minidao.annotation.Sql;
 import org.jeecgframework.minidao.hibernate.MiniDaoSupportHiber;
 
-import weixin.cms.entity.AdEntity;
 import weixin.cms.entity.CmsArticleEntity;
 
 @MiniDao
